@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Tracker — GTA VI · PS5</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="eyebrow">Grand Theft Auto VI · PlayStation 5 · Offline guide</p>
+      <h1>Leonida Trophy Tracker</h1>
+      <p class="subtitle">All 55 trophies — official names, descriptions and grades, a guide with its sources for each one, a roadmap to the platinum, and a checklist that saves on your device.</p>
+    </div>
+    <div class="platinum-card" id="platinumCard">
+      <span class="platinum-label">Platinum</span>
+      <strong>Vice Got a Price!</strong>
+      <span class="platinum-sub">Earn every other trophy.</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-text"><span id="progressCount">0 / 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="grade-counts" id="gradeCounts"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="warnings">Missable &amp; Warnings</button>
+</nav>
+
+<section class="toolbar" id="toolbar">
+  <input type="search" id="searchBox" placeholder="Search a trophy, mission or place…" aria-label="Search trophies">
+  <div class="chips" id="kindChips" role="group" aria-label="Filter by kind"></div>
+  <div class="chips" id="gradeChips" role="group" aria-label="Filter by grade"></div>
+  <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle"> Spoiler-free: hide story trophies until earned</label>
+  <div class="io-buttons">
+    <button type="button" id="exportBtn">Export progress</button>
+    <button type="button" id="importBtn">Import progress</button>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+  </div>
+</section>
+
+<main>
+  <section id="view-checklist" class="view">
+    <p class="hint" id="listHint"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <p class="hint">The order that saves time. Each stage lists what to do and which trophies it earns. Counts are the ones on the in-game 100% checklist (PowerPyx, Push Square) — the checklist itself only appears after the story, under Progress &gt; Stats &gt; 100% Completion.</p>
+    <ol class="roadmap" id="roadmapList"></ol>
+  </section>
+
+  <section id="view-warnings" class="view" hidden>
+    <div class="warning-card missable-card">
+      <h2>⚠ The one trophy you can miss</h2>
+      <p><strong>Positive Mental Attitude</strong> — meditate at every spot across Leonida (18 meditations at 10 locations). The first meditation is Lucia's on the balcony at Jason's house in <strong>Chapter 1</strong>, after the mission <strong>Down to Earth</strong>: she talks about meditating in the kitchen in the morning, then walks to the balcony. <strong>Follow her and accept at once</strong> — it never returns after Chapter 1. Whether it counts toward the trophy is unconfirmed, so do it to be safe. Sources: PowerPyx (All Meditation Spot Locations), GameMapa, GameTrek.</p>
+    </div>
+    <div class="warning-card">
+      <h2>Five trophies are still unconfirmed</h2>
+      <p><strong>In The Beginning…</strong>, <strong>Capital Offense</strong>, <strong>Bad Luck, I Guess</strong>, <strong>The Truth Is Out There</strong> and <strong>Ten Pin</strong> have no confirmed method yet (PowerPyx via eGamers). This guide flags them honestly and gives the best current lead for each — check updated guides before grinding them.</p>
+    </div>
+    <div class="warning-card">
+      <h2>Rules that cost you trophies</h2>
+      <ul>
+        <li><strong>Cheats disable trophies and saving</strong> (GTABase, TechWiser via eGamers) — leave cheats off for the whole run; the only fix is a clean save.</li>
+        <li><strong>No mission replay.</strong> Keep a spread of manual saves as you go, especially before Chapter 1 ends.</li>
+        <li><strong>Stranger chains have windows.</strong> One source (TechWiser via eGamers) reports the stranger mission chains behind five hidden trophies have windows tied to story progress — begin each chain as soon as it unlocks.</li>
+        <li><strong>Avoid the Irredeemable criminal profile</strong> — it is permanent and makes the police more aggressive (PowerPyx via eGamers).</li>
+        <li>Nothing on the 100% checklist is missable: everything can still be done in free roam after the story (PowerPyx).</li>
+      </ul>
+    </div>
+    <div class="warning-card">
+      <h2>About the numbers in this guide</h2>
+      <p>Every specific number — counts, prices, locations — is cited beside the trophy it belongs to. Where two trusted guides disagree (for example, whether the Chapter 1 meditation counts toward Positive Mental Attitude), this guide says so instead of picking a side. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+    </div>
+  </section>
+</main>
+
+<aside class="detail" id="detailPanel" hidden aria-label="Trophy guide">
+  <button type="button" class="detail-close" id="detailClose" aria-label="Close guide">✕</button>
+  <div id="detailBody"></div>
+</aside>
+
+<footer>
+  <p>Leonida Trophy Tracker — an unofficial fan-made guide. Grand Theft Auto and GTA are trademarks of Rockstar Games; this guide uses no Rockstar logos, artwork or screenshots. Trophy names and descriptions are shown as PlayStation publishes them. Progress is saved only in this browser (localStorage) and can be exported to a file. Works fully offline.</p>
+  <p class="sources-note">Sources consulted: PowerPyx, GameMapa, eGamers, KeenGamer, Mobalytics, GamesFuze, Push Square, Shacknews, GTADojo, OutputLag, TheGamesWiki, GameTrek, WeHunt — each guide names its sources beside the trophy.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
